@@ -1,24 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gt_hw_3_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lokalnaya-avtorizaciya-bez-parolya-v-Ubuntu" translatesAutoresizingMaskIntoConstraints="NO" id="uhh-eZ-WZr">
+                                <rect key="frame" x="75" y="88" width="225" height="208"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCn-8I-9mB">
+                                <rect key="frame" x="75" y="345" width="225" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-Ig-gCn">
+                                <rect key="frame" x="75" y="427" width="225" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn6-kQ-5os">
+                                <rect key="frame" x="75" y="602" width="76" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pY4-gM-oY2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-BP-r31">
+                                <rect key="frame" x="220" y="601" width="84" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="at1-Yl-vei"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-TW-4Ni">
+                                <rect key="frame" x="269" y="469" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Yy-TW-4Ni" firstAttribute="top" secondItem="zJh-Ig-gCn" secondAttribute="bottom" constant="8" symbolic="YES" id="887-Pw-8QN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Yy-TW-4Ni" secondAttribute="trailing" constant="75" id="BvR-Tq-X18"/>
+                            <constraint firstItem="Nn6-kQ-5os" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="EO1-OT-g8L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nn6-kQ-5os" secondAttribute="bottom" constant="141" id="FXX-uE-Lny"/>
+                            <constraint firstItem="zJh-Ig-gCn" firstAttribute="top" secondItem="kCn-8I-9mB" secondAttribute="bottom" constant="48" id="IGQ-e4-qnr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kCn-8I-9mB" secondAttribute="trailing" constant="75" id="KGt-qe-duw"/>
+                            <constraint firstItem="kCn-8I-9mB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="W6b-LD-qe8"/>
+                            <constraint firstItem="uhh-eZ-WZr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="Z1h-Co-VV4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uhh-eZ-WZr" secondAttribute="trailing" constant="75" id="ZO5-9q-uUj"/>
+                            <constraint firstItem="cDa-BP-r31" firstAttribute="top" secondItem="zJh-Ig-gCn" secondAttribute="bottom" constant="140" id="ZTm-Jl-sZI"/>
+                            <constraint firstItem="kCn-8I-9mB" firstAttribute="top" secondItem="uhh-eZ-WZr" secondAttribute="bottom" constant="49" id="ZeC-R7-Ma2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zJh-Ig-gCn" secondAttribute="trailing" constant="75" id="acJ-V8-i57"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cDa-BP-r31" secondAttribute="trailing" constant="71" id="bRo-DA-Znu"/>
+                            <constraint firstItem="Nn6-kQ-5os" firstAttribute="top" secondItem="zJh-Ig-gCn" secondAttribute="bottom" constant="141" id="fh1-1w-4zD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uhh-eZ-WZr" secondAttribute="bottom" constant="482" id="g0d-zZ-Rwp"/>
+                            <constraint firstItem="uhh-eZ-WZr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="gP2-nI-pDh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cDa-BP-r31" secondAttribute="bottom" constant="142" id="k4B-Hs-cld"/>
+                            <constraint firstItem="zJh-Ig-gCn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="tNc-CP-cF2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forgotLabel" destination="8Yy-TW-4Ni" id="0RG-HF-AcZ"/>
+                        <outlet property="passwordTextField" destination="zJh-Ig-gCn" id="aaU-c0-TA4"/>
+                        <outlet property="usernameTextField" destination="kCn-8I-9mB" id="3lw-yw-D96"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="-28.078817733990149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lokalnaya-avtorizaciya-bez-parolya-v-Ubuntu" width="1600" height="836"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
