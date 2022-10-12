@@ -21,22 +21,14 @@ class ViewController: UIViewController {
         
         var text = ""
         
-        if let username = usernameTextField.text {
-            if let userpassword = users[username] {
-                if let password = passwordTextField.text {
-                    if userpassword == password {
-                        text = "Access granted!"
-                    } else {
-                        text = "Password is incorrect!"
-                    }
-                } else {
-                    text = "Password is empty!"
-                }
+        if isDataFilled() {
+            if let userpassword = users[usernameTextField.text!] {
+               text = checkPassword(userpassword)
             } else {
-                text = "Username is missing!"
+                text = "Username is missing"
             }
         } else {
-            text = "Username is empty!"
+            text = "Please fill both entryes"
         }
         
         print(text)
@@ -46,24 +38,42 @@ class ViewController: UIViewController {
         
         var text = ""
         
-        if let username = usernameTextField.text {
-            if users[username] == nil {
-                if let password = passwordTextField.text {
-                    
-                    users[username] = password
-                    text = "New user added: \n Login: \(username) || Password : \(users[username]!)"
-                } else {
-                    text = "Password is empty!"
-                }
+        if isDataFilled() {
+            let usernameFilled = usernameTextField.text!
+            
+            if users[usernameFilled] == nil {
+                users[usernameFilled] = passwordTextField.text
+                
+                text = "New user added: \n Login: \(usernameFilled) || Password : \(users[usernameFilled]!)"
             } else {
                 text = "Username already exist!"
             }
         } else {
-            text = "Username is empty!"
+            text = "Please fill both entryes"
         }
         
         print(text)
     }
+    
+    func isDataFilled() -> Bool {
+        if let usernameData = usernameTextField.text,
+           let passwordData = passwordTextField.text {
+            
+            if usernameData.isEmpty || passwordData.isEmpty {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func checkPassword(_ checkingPassword: String) -> String{
+        if checkingPassword == passwordTextField.text {
+            return "Access granted"
+        } else {
+            return "Access denied. Password is incorrect"
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
